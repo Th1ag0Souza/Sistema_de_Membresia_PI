@@ -33,10 +33,17 @@
 }
 
 /* ── Cores utilitárias ────────────────────────────────────────────── */
-.text-primary   { color: #1a56a0 !important; }
-.bg-primary     { background-color: #1a56a0 !important; }
-.border-primary { border-color: #1a56a0 !important; }
-.bg-primary-subtle { background-color: rgba(26, 86, 160, 0.12) !important; }
+.text-primary {
+    color: #1a56a0 !important;
+}
+
+.border-primary {
+    border-color: #1a56a0 !important;
+}
+
+.bg-primary-subtle {
+    background-color: rgba(26, 86, 160, 0.12) !important;
+}
 
 /* ── Sidebar ──────────────────────────────────────────────────────── */
 .sidebar {
@@ -135,19 +142,45 @@
 }
 
 /* ── Cards de estatísticas ────────────────────────────────────────── */
-.stat-card { border-left: 4px solid #1a56a0; }
-.stat-card.verde  { border-left-color: #198754; }
-.stat-card.amarelo { border-left-color: #ffc107; }
+.stat-card {
+    border-left: 4px solid #1a56a0;
+}
+
+.stat-card.verde {
+    border-left-color: #198754;
+}
+
+.stat-card.amarelo {
+    border-left-color: #ffc107;
+}
 
 /* ── Card headers ─────────────────────────────────────────────────── */
-.card-header.bg-primary   { background-color: #1a56a0 !important; }
-.card-header.bg-secondary { background-color: #6c757d !important; }
+.card-header.bg-primary {
+    background-color: #1a56a0 !important;
+}
+
+.card-header.bg-secondary {
+    background-color: #6c757d !important;
+}
 
 /* ── Badges de status de membro ───────────────────────────────────── */
-.badge-ativo      { background-color: #198754; }
-.badge-inativo    { background-color: #6c757d; }
-.badge-visitante  { background-color: #0dcaf0; color: #000 !important; }
-.badge-transferido { background-color: #ffc107; color: #000 !important; }
+.badge-ativo {
+    background-color: #198754;
+}
+
+.badge-inativo {
+    background-color: #6c757d;
+}
+
+.badge-visitante {
+    background-color: #0dcaf0;
+    color: #000 !important;
+}
+
+.badge-transferido {
+    background-color: #ffc107;
+    color: #000 !important;
+}
 
 /* ── Tabelas ──────────────────────────────────────────────────────── */
 .table thead th {
@@ -205,4 +238,9 @@
     .main-content {
         margin-left: 0;
     }
+}
+
+.card .btn {
+    white-space: normal;
+    word-break: break-word;
 }
