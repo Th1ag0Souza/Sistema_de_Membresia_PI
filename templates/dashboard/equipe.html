@@ -1,0 +1,163 @@
+{% extends "base_dashboard.html" %}
+{% block title %}Nossa Equipe — Igreja Membresia{% endblock %}
+{% block page_title %}Nossa Equipe{% endblock %}
+
+{% block content %}
+
+<div class="mb-4">
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb mb-0">
+            <li class="breadcrumb-item"><a href="{{ url_for('home') }}">Dashboard</a></li>
+            <li class="breadcrumb-item active">Nossa Equipe</li>
+        </ol>
+    </nav>
+</div>
+
+<!-- Cabeçalho -->
+<div class="text-center mb-5">
+    <div class="d-inline-flex align-items-center justify-content-center bg-primary bg-opacity-10 rounded-circle mb-3" style="width:64px;height:64px;">
+        <i class="bi bi-people-fill text-primary fs-3"></i>
+    </div>
+    <h3 class="fw-bold mb-1">Desenvolvedores do Projeto</h3>
+    <p class="text-muted">Sistema de Membresia — Fatec Jahu</p>
+    <span class="badge bg-primary bg-opacity-10 text-primary px-3 py-2" style="font-size:.85rem;">
+        <i class="bi bi-mortarboard-fill me-1"></i>Desenvolvimento de Sistemas
+    </span>
+</div>
+
+<div class="row justify-content-center g-4 mb-5">
+
+    <div class="col-md-5">
+        <div class="card border-0 shadow-sm h-100">
+            <div class="card-body p-4">
+
+                <div class="d-flex align-items-center gap-3 mb-4">
+                    <div class="d-flex align-items-center justify-content-center rounded-circle text-white fw-bold flex-shrink-0"
+                         style="width:60px;height:60px;font-size:1.4rem;background:linear-gradient(135deg,#1a56a0,#0dcaf0);">
+                        WLCR
+                    </div>
+                    <div>
+                        <h5 class="fw-bold mb-0">Wellington Costa Ribeiro</h5>
+                        <span class="badge bg-primary bg-opacity-10 text-primary mt-1">Front-end &amp; UI/UX</span>
+                    </div>
+                </div>
+
+                <ul class="list-unstyled mb-4">
+                    <li class="d-flex align-items-center gap-2 mb-2 text-muted small">
+                        <i class="bi bi-mortarboard text-primary"></i>
+                        <span>Sistemas para Internet — Fatec Jahu</span>
+                    </li>
+                    <li class="d-flex align-items-center gap-2 mb-2 text-muted small">
+                        <i class="bi bi-envelope text-primary"></i>
+                        <span>w.luiscostaribeiro@gmail.com</span>
+                    </li>
+                    <li class="d-flex align-items-center gap-2 text-muted small">
+                        <i class="bi bi-code-slash text-primary"></i>
+                        <span>HTML, CSS, Bootstrap, Jinja2</span>
+                    </li>
+                </ul>
+
+                <div class="bg-light rounded p-3 mb-4">
+                    <p class="fw-semibold small mb-2 text-dark">
+                        <i class="bi bi-check2-circle text-primary me-1"></i>Responsabilidades no projeto
+                    </p>
+                    <div class="d-flex flex-wrap gap-1">
+                        <span class="badge bg-white border text-muted">Templates HTML</span>
+                        <span class="badge bg-white border text-muted">Estilização CSS</span>
+                        <span class="badge bg-white border text-muted">Componentes Bootstrap</span>
+                        <span class="badge bg-white border text-muted">UI/UX</span>
+                    </div>
+                </div>
+
+                <div class="d-flex gap-2">
+                    <a href="#" class="btn btn-outline-dark btn-sm flex-fill">
+                        <i class="bi bi-github me-1"></i>GitHub - https://github.com/WellingtonLCR
+                    </a>
+                    <a href="#" class="btn btn-outline-primary btn-sm flex-fill">
+                        <i class="bi bi-linkedin me-1"></i>LinkedIn - https://www.linkedin.com/in/wellington-luis-costa-ribeiro-51452018a/
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Desenvolvedor 2 -->
+    <div class="col-md-5">
+        <div class="card border-0 shadow-sm h-100">
+            <div class="card-body p-4">
+
+                <!-- Avatar + nome -->
+                <div class="d-flex align-items-center gap-3 mb-4">
+                    <div class="d-flex align-items-center justify-content-center rounded-circle text-white fw-bold flex-shrink-0"
+                         style="width:60px;height:60px;font-size:1.4rem;background:linear-gradient(135deg,#198754,#20c997);">
+                        TS
+                    </div>
+                    <div>
+                        <h5 class="fw-bold mb-0">Thiago souza</h5>
+                        <span class="badge bg-success bg-opacity-10 text-success mt-1">Back-end &amp; Banco de Dados</span>
+                    </div>
+                </div>
+
+                <!-- Informações -->
+                <ul class="list-unstyled mb-4">
+                    <li class="d-flex align-items-center gap-2 mb-2 text-muted small">
+                        <i class="bi bi-mortarboard text-success"></i>
+                        <span>Análise e Desenvolvimento de Sistemas — Fatec Jahu</span>
+                    </li>
+                    <li class="d-flex align-items-center gap-2 mb-2 text-muted small">
+                        <i class="bi bi-envelope text-success"></i>
+                        <span>emaildupla@exemplo.com</span>
+                    </li>
+                    <li class="d-flex align-items-center gap-2 text-muted small">
+                        <i class="bi bi-code-slash text-success"></i>
+                        <span>Python, Flask, MySQL, SQL</span>
+                    </li>
+                </ul>
+
+                <!-- Responsabilidades -->
+                <div class="bg-light rounded p-3 mb-4">
+                    <p class="fw-semibold small mb-2 text-dark">
+                        <i class="bi bi-check2-circle text-success me-1"></i>Responsabilidades no projeto
+                    </p>
+                    <div class="d-flex flex-wrap gap-1">
+                        <span class="badge bg-white border text-muted">Banco de Dados</span>
+                        <span class="badge bg-white border text-muted">Rotas Flask</span>
+                        <span class="badge bg-white border text-muted">Schema SQL</span>
+                        <span class="badge bg-white border text-muted">Back-end</span>
+                    </div>
+                </div>
+
+                <!-- Links -->
+                <div class="d-flex gap-2">
+                    <a href="#" class="btn btn-outline-dark btn-sm flex-fill">
+                        <i class="bi bi-github me-1"></i>GitHub
+                    </a>
+                    <a href="#" class="btn btn-outline-success btn-sm flex-fill">
+                        <i class="bi bi-linkedin me-1"></i>LinkedIn
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<div class="card border-0 bg-primary bg-opacity-10 shadow-sm">
+    <div class="card-body p-4 text-center">
+        <i class="bi bi-book-half text-primary fs-3 mb-2 d-block"></i>
+        <h6 class="fw-bold text-primary mb-1">Sistema de Membresia de Igreja</h6>
+        <p class="text-muted small mb-0">
+            Projeto desenvolvido para a disciplina de Programação para Internet — ILP951 —
+            <strong>Fatec Jahu · {{ 2026 }}</strong>
+        </p>
+        <div class="d-flex justify-content-center gap-4 mt-3">
+            <span class="text-muted small"><i class="bi bi-people-fill me-1 text-primary"></i>Gestão de Membros</span>
+            <span class="text-muted small"><i class="bi bi-diagram-3 me-1 text-primary"></i>Células</span>
+            <span class="text-muted small"><i class="bi bi-cash-coin me-1 text-primary"></i>Contribuições</span>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
