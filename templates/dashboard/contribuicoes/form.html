@@ -1,0 +1,68 @@
+{% extends "base_dashboard.html" %}
+{% block title %}{{ titulo }} — Igreja Membresia{% endblock %}
+{% block page_title %}{{ titulo }}{% endblock %}
+
+{% block content %}
+<div class="mb-4">
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb mb-0">
+            <li class="breadcrumb-item"><a href="{{ url_for('home') }}">Dashboard</a></li>
+            <li class="breadcrumb-item"><a href="{{ url_for('contribuicoes_listar') }}">Contribuições</a></li>
+            <li class="breadcrumb-item active">{{ titulo }}</li>
+        </ol>
+    </nav>
+</div>
+
+<form action="{{ url_for('contribuicoes_cadastrar') }}" method="POST">
+    <div class="card border-0 shadow-sm mb-4">
+        <div class="card-header bg-white fw-semibold py-3"><i class="bi bi-cash-coin me-2 text-primary"></i>Dados da Contribuição</div>
+        <div class="card-body p-4">
+            <div class="row g-3">
+                <div class="col-md-6">
+                    <label class="form-label fw-semibold">Membro <span class="text-danger">*</span></label>
+                    <select name="membro_id" class="form-select" required>
+                        <option value="">Selecione o membro...</option>
+                        {% for m in membros %}
+                        <option value="{{ m.id_membro }}">{{ m.nome }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+                <div class="col-md-3">
+                    <label class="form-label fw-semibold">Tipo <span class="text-danger">*</span></label>
+                    <select name="tipo" class="form-select" required>
+                        {% for t in ['Dízimo','Oferta','Missões','Construção','Outros'] %}
+                        <option value="{{ t }}">{{ t }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+                <div class="col-md-3">
+                    <label class="form-label fw-semibold">Valor (R$) <span class="text-danger">*</span></label>
+                    <input type="number" name="valor" class="form-control" step="0.01" min="0.01" placeholder="0,00"
+                        required>
+                </div>
+                <div class="col-md-4">
+                    <label class="form-label fw-semibold">Data do Pagamento <span class="text-danger">*</span></label>
+                    <input type="date" name="data_pagamento" class="form-control" required>
+                </div>
+                <div class="col-md-4">
+                    <label class="form-label fw-semibold">Forma de Pagamento</label>
+                    <select name="forma_pagamento" class="form-select">
+                        {% for f in ['Dinheiro','PIX','Cartão','Transferência'] %}
+                        <option value="{{ f }}">{{ f }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+                <div class="col-md-4">
+                    <label class="form-label fw-semibold">Observação</label>
+                    <input type="text" name="observacao" class="form-control" placeholder="Opcional">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="d-flex justify-content-between">
+        <a href="{{ url_for('contribuicoes_listar') }}" class="btn btn-outline-secondary"><i
+                class="bi bi-arrow-left me-2"></i>Cancelar</a>
+        <button type="submit" class="btn btn-primary px-4"><i class="bi bi-check-lg me-2"></i>Registrar</button>
+    </div>
+</form>
+{% endblock %}
