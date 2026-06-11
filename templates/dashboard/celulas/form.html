@@ -1,0 +1,71 @@
+{% extends "base_dashboard.html" %}
+{% block title %}{{ titulo }} — Igreja Membresia{% endblock %}
+{% block page_title %}{{ titulo }}{% endblock %}
+
+{% block content %}
+<div class="mb-4">
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb mb-0">
+            <li class="breadcrumb-item"><a href="{{ url_for('home') }}">Dashboard</a></li>
+            <li class="breadcrumb-item"><a href="{{ url_for('celulas_listar') }}">Células</a></li>
+            <li class="breadcrumb-item active">{{ titulo }}</li>
+        </ol>
+    </nav>
+</div>
+
+<form
+    action="{{ url_for('celulas_alterar', id=item.id_celula) if modo == 'alterar' else url_for('celulas_cadastrar') }}"
+    method="POST">
+    <div class="card border-0 shadow-sm mb-4">
+        <div class="card-header bg-white fw-semibold py-3"><i class="bi bi-house-heart me-2 text-primary"></i>Dados da
+            Célula</div>
+        <div class="card-body p-4">
+            <div class="row g-3">
+                <div class="col-md-6">
+                    <label class="form-label fw-semibold">Nome da Célula: <span class="text-danger">*</span></label>
+                    <input type="text" name="nome" class="form-control" value="{{ item.nome if item else '' }}"
+                        required>
+                </div>
+                <div class="col-md-6">
+                    <label class="form-label fw-semibold">Líder: </label>
+                    <input type="text" name="lider" class="form-control" value="{{ item.lider if item else '' }}"
+                        placeholder="Nome do lider">
+                </div>
+                <div class="col-md-4">
+                    <label class="form-label fw-semibold">Dia da Semana: </label>
+                    <select name="dia_semana" class="form-select">
+                        <option value="">Selecione...</option>
+                        {% for dia in ['Segunda','Terça','Quarta','Quinta','Sexta','Sábado','Domingo'] %}
+                        <option value="{{ dia }}" {{ 'selected' if item and item.dia_semana==dia else '' }}>{{ dia }}
+                        </option>
+                        {% endfor %}
+                    </select>
+                </div>
+                <div class="col-md-3">
+                    <label class="form-label fw-semibold">Horário: </label>
+                    <input type="time" name="horario" class="form-control" value="{{ item.horario if item else '' }}">
+                </div>
+                <div class="col-md-2">
+                    <label class="form-label fw-semibold">Status:</label>
+                    <select name="status" class="form-select">
+                        <option value="Ativa" {{ 'selected' if not item or item.status=='Ativa' else '' }}>Ativa
+                        </option>
+                        <option value="Inativa" {{ 'selected' if item and item.status=='Inativa' else '' }}>Inativa
+                        </option>
+                    </select>
+                </div>
+                <div class="col-12">
+                    <label class="form-label fw-semibold">Endereço do Encontro: </label>
+                    <input type="text" name="endereco" class="form-control" value="{{ item.endereco if item else '' }}"
+                        placeholder="Rua, número, bairro...">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="d-flex justify-content-between">
+        <a href="{{ url_for('celulas_listar') }}" class="btn btn-outline-secondary"><i
+                class="bi bi-arrow-left me-2"></i>Cancelar</a>
+        <button type="submit" class="btn btn-primary px-4"><i class="bi bi-check-lg me-2"></i>Salvar</button>
+    </div>
+</form>
+{% endblock %}
